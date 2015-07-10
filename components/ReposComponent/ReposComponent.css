@@ -1,0 +1,16 @@
+:root {
+    --blue: blue;
+	--green: green;
+}
+
+.repocontainer{
+	.repos{
+		border: 1px solid var(--blue);
+		margin: 10px 0;
+		padding: 0 20px;
+		.name{
+			text-decoration: underline;
+			color: var(--green);
+		}
+	}
+}

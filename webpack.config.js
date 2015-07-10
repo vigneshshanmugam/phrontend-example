@@ -4,4 +4,5 @@ var __DEV__  = !__PROD__;
 
 module.exports = makeconf({
 	src: __dirname,
+	separateStylesheet: true
 });
