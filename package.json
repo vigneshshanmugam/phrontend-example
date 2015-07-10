@@ -1,0 +1,28 @@
+{
+  "name": "phrontend-example",
+  "version": "1.0.0",
+  "description": "Testing for SEO",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vigneshshanmugam/phrontend-example.git"
+  },
+  "author": "Vignesh Shanmugam <vignesh.shanmugam22@gmail.com> (https://vigneshh.in)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vigneshshanmugam/phrontend-example/issues"
+  },
+  "homepage": "https://github.com/vigneshshanmugam/phrontend-example",
+  "devDependencies": {
+    "keymirror": "^0.1.1",
+    "phrontend": "^3.0.0-beta6",
+    "phrontend-webpack": "0.0.5",
+    "react": "^0.13.3",
+    "react-router": "^0.13.3",
+    "whatwg-fetch": "^0.9.0"
+  }
+}
