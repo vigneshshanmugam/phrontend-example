@@ -15,11 +15,16 @@ export default React.createClass({
 	handleError(err){
 		console.log(err);
 	},
+	injectMetaTags() {
+		let meta = document.getElementById('custom-meta');
+		meta.setAttribute("content","All the Repositories");
+	},
 	componentDidMount() {
 		RepoStore.subscribe(this.handleChange, this.handleError);
 		ReposActionCreator.fetchReposData({
 			username: 'vigneshshanmugam'
 		});
+		this.injectMetaTags();
 	},
 	componentWillUnmount() {
 		RepoStore.unsubscribe(this.handleChange, this.handleError);

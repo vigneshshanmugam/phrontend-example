@@ -13,11 +13,16 @@ export default React.createClass({
 	handleError(err){
 		console.log(err);
 	},
+	injectMetaTags() {
+		let meta = document.getElementById('custom-meta');
+		meta.setAttribute("content","Users Page");
+	},
 	componentDidMount() {
 		UserStore.subscribe(this.handleChange, this.handleError);
 		UserActionCreator.fetchUserData({
 			username: 'vigneshshanmugam'
 		});
+		this.injectMetaTags();
 	},
 	componentWillUnmount() {
 		UserStore.unsubscribe(this.handleChange, this.handleError);

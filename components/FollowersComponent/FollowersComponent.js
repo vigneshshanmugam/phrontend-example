@@ -13,11 +13,16 @@ export default React.createClass({
 	handleError(err){
 		console.log(err);
 	},
+	injectMetaTags() {
+		let meta = document.getElementById('custom-meta');
+		meta.setAttribute("content","All the Followers");
+	},
 	componentDidMount() {
 		FollowersStore.subscribe(this.handleChange, this.handleError);
 		FollowersActionCreator.fetchFollowersData({
 			username: 'vigneshshanmugam'
 		});
+		this.injectMetaTags();
 	},
 	componentWillUnmount() {
 		FollowersStore.unsubscribe(this.handleChange, this.handleError);
