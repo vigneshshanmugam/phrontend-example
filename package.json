@@ -2,11 +2,18 @@
   "name": "phrontend-example",
   "version": "1.0.0",
   "description": "Testing for SEO",
-  "main": "index.js",
+  "main": "server.js",
+  "engines": {
+    "node": "0.12.x"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node server.js"
   },
+  "keywords": [
+    "Phrontend-example",
+    "Phrontend"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/vigneshshanmugam/phrontend-example.git"
@@ -18,6 +25,9 @@
   },
   "homepage": "https://github.com/vigneshshanmugam/phrontend-example",
   "devDependencies": {
+    "express": "^4.13.1",
+    "fs": "0.0.2",
+    "http": "0.0.0",
     "keymirror": "^0.1.1",
     "phrontend": "^3.0.0-beta6",
     "phrontend-webpack": "0.0.5",
