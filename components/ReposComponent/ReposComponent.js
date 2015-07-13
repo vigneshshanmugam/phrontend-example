@@ -26,13 +26,13 @@ export default React.createClass({
 	},
 	render() {
 		if(!this.state.data) {
-			return <div> Data is Not Present </div>
+			return <div> Loading... </div>
 		}
 		return <div className={styles.repocontainer}>
 			{this.state.data.map(x => {
 				return <div className={styles.repos}>
 					<h2 className={styles.name}> {x.name} </h2>
-					<p> URL - {x.url} </p>
+					<p> URL - <a href={x.url}>{x.url}</a> </p>
 					<p> Language - {x.language} </p>
 					<p> Open Issues - {x.open_issues} </p>
 					<p> Forks - {x.forks} </p>
