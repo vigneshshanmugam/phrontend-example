@@ -25,14 +25,16 @@
   },
   "homepage": "https://github.com/vigneshshanmugam/phrontend-example",
   "devDependencies": {
-    "express": "^4.13.1",
-    "fs": "0.0.2",
-    "http": "0.0.0",
     "keymirror": "^0.1.1",
     "phrontend": "^3.0.0-beta6",
     "phrontend-webpack": "0.0.5",
     "react": "^0.13.3",
     "react-router": "^0.13.3",
     "whatwg-fetch": "^0.9.0"
+  },
+  "dependencies": {
+    "express": "^4.13.1",
+    "fs": "0.0.2",
+    "http": "0.0.0"
   }
 }
