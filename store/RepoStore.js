@@ -8,14 +8,19 @@ let RepoStore = Store.create({
 	handler(payload) {
 		switch (payload.actionType) {
 			case Actions.FETCH_REPOS_DATA:
-			fetch('https://api.github.com/users/' + payload.data.username + '/repos')
-				.then(r => r.json())
-				.then(ReposActionCreator.fetchReposDataSuccess)
-				.catch(ReposActionCreator.fetchReposDataError);
+			if(this._cache){
+				this.emitChange();
+			} else {
+				fetch('https://api.github.com/users/' + payload.data.username + '/repos')
+					.then(r => r.json())
+					.then(ReposActionCreator.fetchReposDataSuccess)
+					.catch(ReposActionCreator.fetchReposDataError);
+			}
 			break;
 
 			case Actions.FETCH_REPOS_DATA_SUCCESS:
 			this.set(this.parse(payload.data));
+			this._cache = true;
 			this.emitChange();
 			break;
 

@@ -8,10 +8,14 @@ let UserStore = Store.create({
 	handler(payload) {
 		switch (payload.actionType) {
 			case Actions.FETCH_USER_DATA:
-			fetch('https://api.github.com/users/' + payload.data.username )
-				.then(r => r.json())
-				.then(UserActionCreator.fetchUserDataSuccess)
-				.catch(UserActionCreator.fetchUserDataError);
+			if(this._cache){
+				this.emitChange();
+			} else {
+				fetch('https://api.github.com/users/' + payload.data.username )
+					.then(r => r.json())
+					.then(UserActionCreator.fetchUserDataSuccess)
+					.catch(UserActionCreator.fetchUserDataError);
+			}
 			break;
 
 			case Actions.FETCH_USER_DATA_SUCCESS:

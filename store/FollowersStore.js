@@ -8,10 +8,14 @@ let FollowersStore = Store.create({
 	handler(payload) {
 		switch (payload.actionType) {
 			case Actions.FETCH_FOLLOWERS_DATA:
-			fetch('https://api.github.com/users/' + payload.data.username + '/followers')
-				.then(r => r.json())
-				.then(FollowersActionCreator.fetchFollowersDataSuccess)
-				.catch(FollowersActionCreator.fetchFollowersDataError);
+			if(this._cache){
+				this.emitChange();
+			} else {
+				fetch('https://api.github.com/users/' + payload.data.username + '/followers')
+					.then(r => r.json())
+					.then(FollowersActionCreator.fetchFollowersDataSuccess)
+					.catch(FollowersActionCreator.fetchFollowersDataError);
+			}	
 			break;
 
 			case Actions.FETCH_FOLLOWERS_DATA_SUCCESS:
