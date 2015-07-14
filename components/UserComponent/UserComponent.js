@@ -15,7 +15,8 @@ export default React.createClass({
 	},
 	injectMetaTags() {
 		let meta = document.getElementById('custom-meta');
-		meta.setAttribute("content","Users Page");
+		meta.setAttribute("content","GitHub user profile");
+		document.title = "Profile Page";
 	},
 	componentDidMount() {
 		UserStore.subscribe(this.handleChange, this.handleError);
@@ -30,8 +31,11 @@ export default React.createClass({
 	render() {
 		if (this.state.loading) return <div>Loading...</div>;
 		return <div>
-			{this.state.name} - 
-			{this.state.public_repos}
+			<p> Name - {this.state.name} </p>
+			<p> Company - {this.state.company} </p>
+			<p> Location - {this.state.location} </p>
+			<p> URL - {this.state.url} </p>
+			<p> No of Repos - {this.state.public_repos} </p>
 		</div>;
 	}
 });

@@ -20,6 +20,7 @@ let FollowersStore = Store.create({
 
 			case Actions.FETCH_FOLLOWERS_DATA_SUCCESS:
 			this.set(this.parse(payload.data));
+			this._cache = true;
 			this.emitChange();
 			break;
 

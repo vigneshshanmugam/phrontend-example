@@ -16,6 +16,7 @@ export default React.createClass({
 	injectMetaTags() {
 		let meta = document.getElementById('custom-meta');
 		meta.setAttribute("content","All the Followers");
+		document.title = "Followers Page";
 	},
 	componentDidMount() {
 		FollowersStore.subscribe(this.handleChange, this.handleError);

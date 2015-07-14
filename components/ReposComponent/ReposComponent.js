@@ -18,6 +18,7 @@ export default React.createClass({
 	injectMetaTags() {
 		let meta = document.getElementById('custom-meta');
 		meta.setAttribute("content","All the Repositories");
+		document.title = "Repositories Page";
 	},
 	componentDidMount() {
 		RepoStore.subscribe(this.handleChange, this.handleError);
