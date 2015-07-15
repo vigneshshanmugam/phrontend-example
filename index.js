@@ -23,8 +23,8 @@ let Page = React.createClass({
 });
 
 let routes = (
-	<Route path="/" handler={App}>
-		<Route name="page" path="/" handler={Page}/>
+	<Route path="/" handler={App} name="page">
+		<DefaultRoute handler={Page}/>
 		<Route name="user" handler={UserComponent}/>
 		<Route name="repos" handler={ReposComponent}/>
 		<Route name="followers" handler={FollowersComponent}/>
