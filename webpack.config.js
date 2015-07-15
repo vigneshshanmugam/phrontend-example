@@ -6,7 +6,7 @@ var __DEV__  = !__PROD__;
 module.exports = makeconf({
 	src: __dirname,
 	separateStylesheet: __PROD__,
-	devtool: __DEV__ ? 'cheap-module-inline-source-map' : 'source-map',
+	devtool: __DEV__ ? 'cheap-module-inline-source-map' : void 0,
 	minimize: __PROD__,
 });
 
