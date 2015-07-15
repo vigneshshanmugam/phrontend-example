@@ -1,4 +1,7 @@
 node_modules
 npm-debug.log
 public/*.map
+public/app.*.bundle.js
+public/bundle.*.css
+public/current.version*
 .npmrc

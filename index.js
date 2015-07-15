@@ -1,5 +1,5 @@
 import React from 'react';
-import Router, { Route, RouteHandler, Link } from 'react-router';
+import Router, { Route, RouteHandler, Link, DefaultRoute } from 'react-router';
 import UserComponent from './components/UserComponent';
 import ReposComponent from './components/ReposComponent';
 import FollowersComponent from './components/FollowersComponent';
@@ -21,13 +21,14 @@ let Page = React.createClass({
 		</div>
 	}
 });
-
 let routes = (
-	<Route path="/" handler={App} name="page">
-		<DefaultRoute handler={Page}/>
-		<Route name="user" handler={UserComponent}/>
-		<Route name="repos" handler={ReposComponent}/>
-		<Route name="followers" handler={FollowersComponent}/>
+	<Route path="/">
+		<Route path="phrontend-example/?" name="page" handler={App}>
+			<DefaultRoute handler={Page}/>
+			<Route name="user" handler={UserComponent}/>
+			<Route name="repos" handler={ReposComponent}/>
+			<Route name="followers" handler={FollowersComponent}/>
+		</Route>
 	</Route>
 );
 
