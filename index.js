@@ -21,14 +21,18 @@ let Page = React.createClass({
 		</div>
 	}
 });
+
+// hack for github pages
+// local and gh-pages have different base-href
+let baseHref = '/phrontend-example/?';
+if (process.env.NODE_ENV!=='production') baseHref = '/';
+
 let routes = (
-	<Route path="/">
-		<Route path="phrontend-example/?" name="page" handler={App}>
-			<DefaultRoute handler={Page}/>
-			<Route name="user" handler={UserComponent}/>
-			<Route name="repos" handler={ReposComponent}/>
-			<Route name="followers" handler={FollowersComponent}/>
-		</Route>
+	<Route path={baseHref} name="page" handler={App}>
+		<DefaultRoute handler={Page}/>
+		<Route name="user" handler={UserComponent}/>
+		<Route name="repos" handler={ReposComponent}/>
+		<Route name="followers" handler={FollowersComponent}/>
 	</Route>
 );
 
