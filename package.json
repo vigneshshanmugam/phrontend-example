@@ -1,10 +1,10 @@
 {
   "name": "phrontend-example",
   "version": "1.0.0",
-  "description": "Testing for SEO",
-  "main": "server.js",
+  "description": "An example for phrontend and phrontend-webpack",
   "engines": {
-    "node": "0.12.x"
+    "node": "0.12.x",
+		"npm": "3.1.x"
   },
   "scripts": {
     "build": "NODE_ENV=production webpack",
@@ -12,12 +12,12 @@
     "start": "webpack-dev-server --hot --inline --content-base=dev-base"
   },
   "keywords": [
-    "Phrontend",
-    "Phrontend-example"
+    "phrontend",
+    "phrontend-example"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/vigneshshanmugam/phrontend-example.git"
+    "url": "https://github.com/vigneshshanmugam/phrontend-example"
   },
   "author": "Vignesh Shanmugam <vignesh.shanmugam22@gmail.com> (https://vigneshh.in)",
   "license": "MIT",
