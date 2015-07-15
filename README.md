@@ -1,4 +1,4 @@
-# phrontend & phrontend-webpack example
+# phrontend-example
 
 + [phrontend](https://github.com/flipkart-incubator/phrontend)
 + [phrontend-webpack](https://github.com/flipkart-incubator/phrontend-webpack)
