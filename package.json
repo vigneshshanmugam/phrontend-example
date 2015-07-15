@@ -7,13 +7,13 @@
     "node": "0.12.x"
   },
   "scripts": {
-		"build": "NODE_ENV=production webpack",
+    "build": "NODE_ENV=production webpack",
     "gh-pages": "npm run build && node ./gh-pages.js",
-		"start": "webpack-dev-server --hot --inline --content-base=dev-base"
+    "start": "webpack-dev-server --hot --inline --content-base=dev-base"
   },
   "keywords": [
-    "Phrontend-example",
-    "Phrontend"
+    "Phrontend",
+    "Phrontend-example"
   ],
   "repository": {
     "type": "git",
@@ -29,9 +29,9 @@
     "phrontend-webpack": "~0.0.1"
   },
   "dependencies": {
-		"keymirror": "^0.1.1",
-		"phrontend": "~0.0.3",
-		"react": "~0.13.3",
+    "keymirror": "^0.1.1",
+    "phrontend": "~0.0.3",
+    "react": "~0.13.3",
     "react-router": "~0.13.3",
     "whatwg-fetch": "^0.9.0"
   }
