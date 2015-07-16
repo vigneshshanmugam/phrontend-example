@@ -1,6 +1,6 @@
 import React from 'react';
-import RepoStore from '../../store/RepoStore';
-import {fetchReposData} from '../../actions/ActionCreators';
+import RepoStore from 'RepoStore';
+import {fetchReposData} from 'ActionCreators';
 import styles from './ReposComponent.css';
 
 export default React.createClass({

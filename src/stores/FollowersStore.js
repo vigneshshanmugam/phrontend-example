@@ -12,7 +12,6 @@ let FollowersStore = Store.create({
 			if(this._cache){
 				this.emitChange();
 			} else {
-				console.log(UsernameStore.get('username'));
 				fetch('https://api.github.com/users/' + UsernameStore.get('username') + '/followers')
 					.then(r => r.json())
 					.then(data => this.set(this.parse(data)) && this.emitChange())

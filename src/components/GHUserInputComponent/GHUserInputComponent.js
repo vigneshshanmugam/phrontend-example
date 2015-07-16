@@ -1,5 +1,5 @@
 import React from 'react';
-import {setGithubUsername, fetchUserData} from '../../actions/ActionCreators';
+import {setGithubUsername, fetchUserData} from 'ActionCreators';
 
 export default React.createClass({
 	getInitialState() {

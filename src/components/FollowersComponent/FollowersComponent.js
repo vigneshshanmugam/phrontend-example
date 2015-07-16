@@ -1,6 +1,6 @@
 import React from 'react';
-import FollowersStore from '../../store/FollowersStore';
-import {fetchFollowersData} from '../../actions/ActionCreators';
+import FollowersStore from 'FollowersStore';
+import {fetchFollowersData} from 'ActionCreators';
 import styles from './FollowersComponent.css';
 
 export default React.createClass({

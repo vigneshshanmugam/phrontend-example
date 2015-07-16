@@ -1,9 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router';
 import styles from './HomeComponent.css';
-import GithubInput from '../GithubInput';
-import UserComponent from '../UserComponent';
-import UsernameStore from '../../store/UsernameStore';
+import GHUserInputComponent from 'GHUserInputComponent';
+import UserComponent from 'UserComponent';
+import UsernameStore from 'UsernameStore';
 
 let Item = React.createClass({
 	render() {
@@ -17,7 +17,7 @@ export default React.createClass({
 	render(){
 		return <div>
 			<div>
-				<GithubInput username={UsernameStore.get('username')}/>
+				<GHUserInputComponent username={UsernameStore.get('username')}/>
 			</div>
 			<div>
 				<UserComponent />

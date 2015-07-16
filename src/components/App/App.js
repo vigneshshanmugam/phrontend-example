@@ -1,7 +1,7 @@
 import React from 'react';
 import {RouteHandler} from 'react-router';
-import UsernameStore from '../../store/UsernameStore';
-import {setGithubUsername} from '../../actions/ActionCreators';
+import UsernameStore from 'UsernameStore';
+import {setGithubUsername} from 'ActionCreators';
 
 export default React.createClass({
 	componentWillMount() {

@@ -11,6 +11,11 @@ module.exports = makeconf({
 	separateStylesheet: __PROD__,
 	devtool: __DEV__ ? 'cheap-module-inline-source-map' : void 0,
 	minimize: __PROD__,
+	moduleDirectories: [
+		'actions',
+		'components',
+		'stores'
+	],
 });
 
 if (__PROD__)

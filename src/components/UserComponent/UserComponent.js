@@ -1,6 +1,6 @@
 import React from 'react';
-import UserStore from '../../store/UserStore';
-import {fetchUserData} from '../../actions/ActionCreators';
+import UserStore from 'UserStore';
+import {fetchUserData} from 'ActionCreators';
 
 export default React.createClass({
 	getInitialState() {
@@ -15,9 +15,7 @@ export default React.createClass({
 	},
 	componentDidMount() {
 		UserStore.subscribe(this.handleChange, this.handleError);
-		fetchUserData({
-			username: 'vigneshshanmugam'
-		});
+		fetchUserData();
 	},
 	componentWillUnmount() {
 		UserStore.unsubscribe(this.handleChange, this.handleError);
@@ -25,11 +23,11 @@ export default React.createClass({
 	render() {
 		if (this.state.loading) return <div>Loading...</div>;
 		return <div>
-			<p> Name - {this.state.name} </p>
-			<p> Company - {this.state.company} </p>
-			<p> Location - {this.state.location} </p>
-			<p> URL - {this.state.url} </p>
-			<p> No of Repos - {this.state.public_repos} </p>
+			<p> Name: {this.state.name} </p>
+			<p> Company: {this.state.company} </p>
+			<p> Location: {this.state.location} </p>
+			<p> URL: {this.state.url} </p>
+			<p> No of Repos: {this.state.public_repos} </p>
 		</div>;
 	}
 });
