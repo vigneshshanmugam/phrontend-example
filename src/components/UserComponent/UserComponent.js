@@ -6,9 +6,8 @@ export default React.createClass({
 	getInitialState() {
 		return { loading: true };
 	},
-	handleChange() {
-		let loading = false;
-		this.setState(Object.assign({loading}, UserStore.get()));
+	handleChange({done}) {
+		this.setState(Object.assign({loading: !done}, UserStore.get()));
 	},
 	handleError(err){
 		console.log(err);
