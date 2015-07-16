@@ -1,7 +1,7 @@
 import {State, Store} from 'phrontend';
 import actions from '../actions/ActionTypes';
 
-let UserStore = Store.create({
+let UsernameStore = Store.create({
 	state: State.extend({
 		props: {
 			username: 'string'
@@ -17,4 +17,4 @@ let UserStore = Store.create({
 	}
 });
 
-export default UserStore;
+export default UsernameStore;
