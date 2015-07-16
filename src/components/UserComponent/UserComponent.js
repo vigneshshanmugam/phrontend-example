@@ -1,9 +1,9 @@
 import React from 'react';
 import UserStore from '../../store/UserStore';
-import UserActionCreator from '../../actions/UserActionCreator';
+import {fetchUserData} from '../../actions/ActionCreators';
 
 export default React.createClass({
-	getInitialState(){
+	getInitialState() {
 		return { loading: true };
 	},
 	handleChange() {
@@ -13,17 +13,11 @@ export default React.createClass({
 	handleError(err){
 		console.log(err);
 	},
-	injectMetaTags() {
-		let meta = document.getElementById('custom-meta');
-		meta.setAttribute("content","GitHub user profile");
-		document.title = "Profile Page";
-	},
 	componentDidMount() {
 		UserStore.subscribe(this.handleChange, this.handleError);
-		UserActionCreator.fetchUserData({
+		fetchUserData({
 			username: 'vigneshshanmugam'
 		});
-		this.injectMetaTags();
 	},
 	componentWillUnmount() {
 		UserStore.unsubscribe(this.handleChange, this.handleError);
@@ -39,4 +33,3 @@ export default React.createClass({
 		</div>;
 	}
 });
-

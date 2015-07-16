@@ -1,6 +1,6 @@
 import React from 'react';
 import RepoStore from '../../store/RepoStore';
-import ReposActionCreator from '../../actions/ReposActionCreator';
+import {fetchReposData} from '../../actions/ActionCreators';
 import styles from './ReposComponent.css';
 
 export default React.createClass({
@@ -22,9 +22,7 @@ export default React.createClass({
 	},
 	componentDidMount() {
 		RepoStore.subscribe(this.handleChange, this.handleError);
-		ReposActionCreator.fetchReposData({
-			username: 'vigneshshanmugam'
-		});
+		fetchReposData();
 		this.injectMetaTags();
 	},
 	componentWillUnmount() {
@@ -48,4 +46,3 @@ export default React.createClass({
 		</div>;
 	}
 });
-

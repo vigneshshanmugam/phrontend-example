@@ -1,0 +1,13 @@
+.links{
+	display: block;
+	font-size: 15px;
+	text-decoration: none;
+	color: blue;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+.item {
+	padding: 5px;
+}

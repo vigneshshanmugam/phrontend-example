@@ -1,32 +1,18 @@
 import {Store} from 'phrontend';
 import UserModel from '../models/UserModel';
-import UserActionCreator from '../actions/UserActionCreator';
-import Actions from '../actions/ActionTypes';
+import actions from '../actions/ActionTypes';
+
+import UsernameStore from './UsernameStore';
 
 let UserStore = Store.create({
 	state: UserModel,
 	handler(payload) {
-		switch (payload.actionType) {
-			case Actions.FETCH_USER_DATA:
-			if(this._cache){
-				this.emitChange();
-			} else {
-				fetch('https://api.github.com/users/' + payload.data.username )
-					.then(r => r.json())
-					.then(UserActionCreator.fetchUserDataSuccess)
-					.catch(UserActionCreator.fetchUserDataError);
-			}
-			break;
-
-			case Actions.FETCH_USER_DATA_SUCCESS:
-			this.set(this.parse(payload.data));
-			this.emitChange();
-			break;
-
-			case Actions.FETCH_USER_DATA_ERROR:
-			throw payload.data;
-			this.emitError(payload.data);
-			break;
+		if (payload.actionType === actions.FETCH_USER_DATA) {
+			this.dispatcher.waitFor([UsernameStore.dispatchToken]);
+			fetch('https://api.github.com/users/' + UsernameStore.get('username'))
+				.then(r => r.json())
+				.then(data => this.set(this.parse(data)) && this.emitChange())
+				.catch(err => this.emitError(err));
 		}
 	}
 });
