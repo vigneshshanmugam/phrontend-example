@@ -1,6 +1,6 @@
 import {Store} from 'phrontend';
 import RepoCollection from '../collection/RepoCollection';
-import actions from '../actions/ActionTypes';
+import actions from 'ActionTypes';
 
 import UsernameStore from './UsernameStore';
 

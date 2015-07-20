@@ -1,5 +1,5 @@
 import {State, Store} from 'phrontend';
-import actions from '../actions/ActionTypes';
+import actions from 'ActionTypes';
 
 let UsernameStore = Store.create({
 	state: State.extend({

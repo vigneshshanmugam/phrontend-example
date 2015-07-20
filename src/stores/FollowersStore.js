@@ -1,6 +1,6 @@
 import {Store} from 'phrontend';
 import FollowersCollection from '../collection/FollowersCollection';
-import actions from '../actions/ActionTypes';
+import actions from 'ActionTypes';
 
 import UsernameStore from './UsernameStore';
 

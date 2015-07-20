@@ -1,8 +1,8 @@
 import {Store} from 'phrontend';
 import UserModel from '../models/UserModel';
-import actions from '../actions/ActionTypes';
+import actions from 'ActionTypes';
 
-import UsernameStore from './UsernameStore';
+import UsernameStore from 'UsernameStore';
 
 let UserStore = Store.create({
 	state: UserModel,

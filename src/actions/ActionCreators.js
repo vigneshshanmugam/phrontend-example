@@ -1,5 +1,5 @@
 import {Dispatcher} from 'phrontend';
-import actions from './ActionTypes';
+import actions from 'ActionTypes';
 
 function ActionCreatorCreator(action) {
 	return function(...data) {
